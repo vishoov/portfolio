@@ -4,7 +4,11 @@ function locomotive() {
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
     smooth: true ,
+    smoothMobile:false
   });
+
+  
+
   locoScroll.on("scroll", ScrollTrigger.update);
 
   ScrollTrigger.scrollerProxy("#main", {
@@ -443,3 +447,35 @@ gsap.to("#page3",{
     scroller:`#main`
   }
 })
+
+    function preloadAssets() {
+        const images = ['male0300.png', 'male0299.png'];
+       
+
+        const allResources = [...images];
+
+        let loadedResources = 0;
+
+        allResources.forEach(resource => {
+            const asset = new Image();
+            asset.onload = () => {
+                loadedResources++;
+                if (loadedResources === allResources.length) {
+                    // All resources are loaded; now you can show your website
+                    showWebsite();
+                }
+            };
+            asset.src = resource;
+        });
+    }
+
+    preloadAssets();
+
+    function showWebsite() {
+        // Hide the loading screen and display your website
+        document.getElementById('loading-screen').style.display = 'none';
+        // Add GSAP ScrollTrigger animations or other website content
+        // ...
+    }
+
+
