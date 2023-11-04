@@ -177,6 +177,7 @@ canvas{
 #page2>#text1{
     position: absolute;
     right:10%;
+    top:25%;
 }
 #page2>#text1>h3{
     color: #7c7c7c;
@@ -189,8 +190,9 @@ canvas{
 #page2>#text2{
     position: absolute;
     top: 55%;
-    right: 10%;
-    text-align: end;
+    left: 10%;
+    text-align: start;
+    
 }
 #page2>#text2>p{
     color: #7c7c7c;
